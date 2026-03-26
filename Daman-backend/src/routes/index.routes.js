@@ -1,0 +1,40 @@
+import { Router } from "express";
+import AdminUsers from "./AdminUser.router.js";
+import uploads3 from "./s3upload.routes.js";
+import User from "./user.router.js";
+import Categories from "./Categories.router.js";
+import Slider from "./Slider.router.js";
+import Products from "./Products.router.js";
+import Cart from "./Cart.routes.js";
+import Address from "./Address.routes.js";
+import Pincodes from "./Pincode.routes.js";
+import Wishlist from "./WishList.routes.js";
+import Homesection from "./Home.routes.js";
+import Orders from "./Orders.routes.js";
+import Charges from "./DeliveryCharges.routes.js";
+import Store from "./StoreManagement.routes.js";
+import Reports from "./Reports.routes.js";
+import Marquee from "./marquee.routes.js";
+import Payment from "./Payment.routes.js";
+
+const router = Router();
+
+router.use("/", AdminUsers);
+router.use("/uploads3", uploads3);
+router.use("/", User);
+router.use("/", Categories);
+router.use("/", Slider);
+router.use("/", Products);
+router.use("/", Cart);
+router.use("/", Address);
+router.use("/", Pincodes);
+router.use("/", Wishlist);
+router.use("/", Homesection);
+router.use("/", Orders);
+router.use("/", Charges);
+router.use("/", Store);
+router.use("/", Reports);
+router.use("/", Marquee);
+router.use("/", Payment);
+
+export default router;

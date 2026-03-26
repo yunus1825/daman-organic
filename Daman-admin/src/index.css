@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@theme {
+  --color-primaryLight: #8ad9fe;
+  --color-primary: #0072ba;
+  --color-primaryDark: #00609c;
+}
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+.form-container {
+  @apply max-w-7xl mx-auto p-8 shadow-lg border border-gray-200;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.form-title {
+  @apply text-3xl font-bold  mb-8 relative inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-title::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-1/2 h-1 bg-primary rounded-full;
+  transform: translateY(8px);
+}
+.form-variant-container {
+  @apply border-2 mb-5 shadow-lg rounded-2xl border-gray-200 p-5;
+  background: #ffffff;
+}
+.form-label {
+  @apply block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide;
+}
+
+.form-label::before {
+  content: "◆";
+  @apply text-primary mr-2 text-xs;
+}
+
+.form-error-text {
+  @apply text-red-500 text-sm mt-1 flex items-center;
+}
+
+.form-error-text::before {
+  content: "⚠";
+  @apply mr-1 text-red-500;
+}
+
+.form-input {
+  @apply w-full px-4 py-3 border-2 border-primary rounded-xl bg-white/90 backdrop-blur-sm;
+  @apply focus:border-blue-500 focus:ring-4 focus:ring-blue-200 focus:outline-none;
+  @apply transition-all duration-300 ease-in-out;
+  @apply placeholder-gray-400 text-gray-700;
+  box-shadow:
+    0 2px 3px -1px rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.06);
+}
+
+.form-input:hover {
+  @apply border-primaryDark;
+  transform: translateY(-1px);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-input:focus {
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.container {
+  width: 96%;
+  margin: 1rem auto;
+}
+/* Chrome, Safari, Edge, Opera */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.no-spinner[type="number"] {
+  -moz-appearance: textfield;
+}

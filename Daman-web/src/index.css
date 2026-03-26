@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@theme {
+  --color-primaryLight: #8ad9fe;
+  --color-primary: #0072ba;
+  --color-primaryDark: #00609c;
+  --color-gray: #66abd7;
+}
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+.input {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20;
+}
+.btn-primary {
+  @apply w-full py-3.5 bg-gradient-to-r from-[#0066FF] to-[#00A3FF] text-white font-semibold rounded-lg hover:opacity-90 transition-all transform hover:scale-[1.01] shadow-md;
+}
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 96%;
+  margin: 1rem auto;
+}
+/* Default bullet */
+.custom-pagination .swiper-pagination-bullet {
+  background-color: #ccc; /* inactive color */
+  opacity: 1; /* make sure it's visible */
+  width: 8px; /* dot width */
+  height: 8px; /* dot height */
+  border-radius: 50%; /* circle */
+  transition: all 0.3s ease;
+}
+
+/* Active bullet */
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: #0072ba; /* active color */
+  width: 20px; /* wider active dot */
+  border-radius: 8px; /* pill shape */
+}
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+  .custom-pagination .swiper-pagination-bullet {
+    width: 6px; /* smaller dot */
+    height: 6px;
+  }
+
+  .custom-pagination .swiper-pagination-bullet-active {
+    width: 12px; /* smaller pill */
+    border-radius: 6px;
+  }
+}
